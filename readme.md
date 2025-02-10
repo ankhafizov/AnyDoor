@@ -40,7 +40,6 @@
 * **[On-going]** Scale-up the training data and release stronger models as the foundaition model for downstream region-to-region generation tasks.
 * **[On-going]** Release specific-designed models for downstream tasks like virtual tryon, face swap, text and logo transfer, etc.
 
-
 ## Installation
 Install with `conda`: 
 ```bash
@@ -100,12 +99,16 @@ Our evaluation data for DreamBooth an COCOEE coud be downloaded at Google Drive:
 
 
 ## Gradio demo 
-Currently, we suport local gradio demo. To launch it, you should firstly modify `/configs/demo.yaml` for the path to the pretrained model, and `/configs/anydoor.yaml` for the path to DINOv2(line 83). 
+
+Download models: https://disk.yandex.ru/d/O43ck7UPxH4MBw to folder models
 
 Afterwards, run the script:
-```bash
-python run_gradio_demo.py
+```docker
+docker-compose up -d 
 ```
+
+Open ui: http://localhost:7860/
+
 The gradio demo would look like the UI shown below:
 
 * 📢 This version requires users to annotate the mask of the target object, too coarse mask would influence the generation quality. We plan to add mask refine module or interactive segmentation modules in the demo.
