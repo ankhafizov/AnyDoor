@@ -1,0 +1,9 @@
+services:
+  anydoor:
+    build: .
+    container_name: anydoor
+    volumes:
+      - ./configs:/usr/src/app/configs
+      - ./models:/usr/src/app/models
+    ports:
+      - "7860:7860"
